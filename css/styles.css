@@ -1,4 +1,7 @@
-/* VARIABLES AND STYLES */
+/* ==================== */
+/* CSS VARIABLES */
+/* ==================== */
+/* Define reusable color values as CSS custom properties */
 :root {
   --white: rgba(255, 255, 255, 1);
   --green: rgba(117, 191, 122, 1);
@@ -8,6 +11,12 @@
   --dark-gray: rgba(39, 32, 66, 1);
   --background: rgba(249, 249, 249, 1);
 }
+
+/* ==================== */
+/* TYPOGRAPHY STYLES */
+/* ==================== */
+
+/* Main heading style - used for hero titles */
 h1 {
   font-size: 64px;
   font-family: Inter;
@@ -17,6 +26,8 @@ h1 {
   text-decoration: none;
   text-transform: none;
 }
+
+/* Base paragraph style */
 p {
   font-size: 18px;
   font-family: Inter;
@@ -27,6 +38,8 @@ p {
   text-transform: none;
   margin: 0;
 }
+
+/* Description class - larger paragraphs with light gray color */
 .description {
   font-size: 24px;
   font-family: Inter;
@@ -37,6 +50,8 @@ p {
   text-transform: none;
   color: var(--light-gray);
 }
+
+/* Button text style */
 .button {
   font-size: 24px;
   font-family: Inter;
@@ -45,6 +60,8 @@ p {
   text-decoration: none;
   text-transform: none;
 }
+
+/* Secondary heading - section titles */
 h2 {
   font-size: 47px;
   font-family: Inter;
@@ -55,6 +72,8 @@ h2 {
   text-transform: uppercase;
   text-align: center;
 }
+
+/* Tertiary heading - subsection titles */
 h3 {
   font-size: 22px;
   font-family: Inter;
@@ -65,6 +84,8 @@ h3 {
   text-transform: uppercase;
   margin: 0;
 }
+
+/* Small button text style */
 .small-button {
   font-size: 16px;
   font-family: Inter;
@@ -73,6 +94,8 @@ h3 {
   text-decoration: none;
   text-transform: none;
 }
+
+/* Small text style */
 .small {
   font-size: 16px;
   font-family: Inter;
@@ -82,73 +105,101 @@ h3 {
   text-transform: none;
 }
 
-/* HEADER */
+/* ==================== */
+/* HEADER SECTION */
+/* ==================== */
+
+/* Add top spacing to header */
 header {
   padding-top: 80px;
 }
+
+/* Main container - centers content with fixed width */
 .container {
   width: 1280px;
-  margin: auto; /* place div in the center */
+  margin: auto; /* Center the container horizontally */
 }
+
+/* Flexbox utility class - arranges children horizontally with space between */
 .flex {
   display: flex;
   justify-content: space-between;
 }
+
+/* Remove default list styling and arrange menu items horizontally */
 .menu ul {
   list-style: none;
   display: flex;
   padding: 0;
   /* gap: 20px; */
 }
+
+/* Menu link styling */
 .menu a {
   color: var(--Dark-gray, #272042);
-  /* Normal */
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 26px; /* 144.444% */
   padding: 10px 30px;
-  text-decoration: none; /* get rid of underline */
-  transition: all 0.3s;
+  text-decoration: none; /* Remove underline from links */
+  transition: all 0.3s; /* Smooth transition for hover effects */
 }
+
+/* Menu link hover state - changes color to green */
 .menu a:hover {
   color: #75bf7a;
 }
+
+/* Special button in menu - "Help center" button */
 .menu .btn-help {
   border-radius: 5px;
   background: var(--Green, #75bf7a);
   color: white;
 }
+
+/* Help button hover state - changes to black background */
 .menu .btn-help:hover {
   color: white;
   background-color: black;
 }
 
-/* HOW IT WORKS */
+/* ==================== */
+/* HOW IT WORKS SECTION */
+/* ==================== */
 
+/* Add top spacing to the section */
 .how-it-works {
   padding-top: 80px;
 }
+
+/* Add bottom margin to each step */
 .how-it-works .step {
   margin-bottom: 50px;
 }
+
+/* Center and limit width of description text */
 .how-it-works .description {
   text-align: center;
   width: 620px;
   margin: auto;
 }
+
+/* 3-column grid layout for the steps */
 .row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
   gap: 40px;
   margin-top: 60px;
 }
+
+/* Number badge styling with background image */
 .how-it-works .number {
   background-image: url("../img/step.png");
   width: 62px;
   height: 62px;
-  /* text styles */
+  /* Text styles */
   color: #75bf7a;
   text-align: center;
   font-family: Inter;
@@ -156,18 +207,147 @@ header {
   font-style: normal;
   font-weight: 800;
   line-height: 37.019px; /* 108.537% */
-  /* to get number into the center */
+  /* Center the number inside the badge */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Utility class to apply green color */
 .green {
   color: var(--green);
 }
+
+/* Align text to the right */
 .text-right {
   text-align: right;
 }
+
+/* Push the number badge to the right in right-aligned steps */
 .text-right .number {
   margin-left: auto;
+}
+
+/* ==================== */
+/* LINK SECTION */
+/* ==================== */
+/* This section contains a green box with a form to download the app */
+
+/* Add vertical spacing to the section */
+.link {
+  padding: 80px 0;
+}
+
+/* Green container with rounded corners using flexbox layout */
+.link .green-box {
+  background: var(--green);
+  border-radius: 5px;
+  padding: 50px;
+  display: flex; /* Arrange children horizontally */
+  align-items: center; /* Vertically center children */
+  gap: 40px; /* Space between description and form */
+}
+
+/* Description paragraph - takes 25% of the width */
+.link .description {
+  color: var(--white);
+  flex: 0 0 25%; /* Don't grow, don't shrink, fixed at 25% */
+  margin: 0;
+}
+
+/* Form container - takes 75% of the width */
+.link form {
+  display: flex; /* Arrange input and button horizontally */
+  gap: 15px; /* Space between input and button */
+  align-items: center;
+  flex: 0 0 75%; /* Don't grow, don't shrink, fixed at 75% */
+  width: 100%;
+}
+
+/* Text input field - grows to fill available space */
+.link input[type="text"] {
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: none;
+  font-family: Inter;
+  font-size: 16px;
+  width: 60%;
+}
+
+/* Submit button styling */
+.link button {
+  padding: 15px 30px;
+  border-radius: 5px;
+  border: none;
+  background: var(--dark-gray);
+  color: var(--white);
+  font-family: Inter;
+
+  font-weight: 700;
+  cursor: pointer; /* Show pointer on hover */
+  transition: all 0.3s; /* Smooth transition for hover effect */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-transform: uppercase; /* Make text uppercase */
+}
+
+/* Button hover state - darkens background */
+.link button:hover {
+  background: var(--black);
+}
+
+/* ==================== */
+/* HERO SECTION */
+/* ==================== */
+/* Main landing section with title, description, and download buttons */
+
+/* Add vertical spacing to the section */
+.hero {
+  padding: 80px 0;
+}
+
+/* Limit description width to 80% of container */
+.hero .description {
+  width: 80%;
+}
+
+/* Align flex items to the bottom */
+.hero .flex {
+  align-items: flex-end;
+}
+
+/* Download button styling (App Store / Google Play) */
+.hero .button-link {
+  padding: 15px 30px;
+  border-radius: 5px;
+  border: none;
+  background: var(--dark-gray);
+  color: var(--white);
+  font-family: Inter;
+
+  font-weight: 700;
+  cursor: pointer; /* Show pointer on hover */
+  transition: all 0.3s; /* Smooth transition for hover effect */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-transform: uppercase; /* Make text uppercase */
+  display: flex; /* Use flexbox to align icon and text */
+  align-items: center; /* Vertically center icon and text */
+  justify-content: center; /* Horizontally center content */
+}
+
+/* Button hover state - darkens background */
+.hero .button-link:hover {
+  background: var(--black);
+}
+
+/* Icon styling inside buttons (Font Awesome icons) */
+.hero .button-link i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 35px;
+}
+
+/* Container for download buttons */
+.hero .btn-wrapper {
+  display: flex; /* Arrange buttons horizontally */
+  gap: 15px; /* Space between buttons */
+  margin-top: 30px; /* Space above button group */
 }
